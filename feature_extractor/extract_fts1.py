@@ -12,9 +12,9 @@ import numpy
 os.environ["CUDA_VISIBLE_DEVICES"]='1'
 
 
-img_path = '/mnt/8T/glf/baseline/pytorch-i3d/bbox_panda/'
+img_path = './dataset/panda_video/bbox_crop/'
 ann_path = '/mnt/8T/glf/baseline/panda_annotation/video_annos/'
-save_path = '../dataset/panda_annotation/zjs_video_annos/'
+save_path = '../dataset/panda_annotation/video_annos/'
 
 class base_resnet(nn.Module):
     def __init__(self):

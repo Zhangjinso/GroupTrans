@@ -47,6 +47,19 @@ The example of our file architecture is like:
 			----
 		---group_test.txt
 		---group_train.txt
+	--jrdb_annotation
+		---grouping_annotation_train
+			----bytes-cafe-2019-02-07_0.json
+			----
+		---video_annos
+			----bytes-cafe-2019-02-07_0
+				-----ann_pkl  #appearance feature
+				-----seqinfo.json
+				-----tracks_new.json
+				-----tracks.json
+			----
+		---group_test.txt
+		---group_train.txt
 ```
 
 
