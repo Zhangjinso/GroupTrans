@@ -74,7 +74,7 @@ python jrdb_train_ours.py --gpu 0 --taskname jrdb_traj_with_app --appearance --r
 ### test
 You can download the [pre-trained model](https://drive.google.com/drive/folders/1Raymle9kMnIP-0mIFoatjdPNm4BD4bRt?usp=sharing)
 
-'''
+```
 python test_ours.py --gpu 0 --taskname ourpanda --loading_tracjory_net ckpt/panda_traj_with_app/full_traj_net_199.pt --appearance 
 python test_ours.py --gpu 0 --taskname ourjrdb --loading_tracjory_net ckpt/jrdb_traj_with_app/full_traj_net_199.pt --appearance
-'''
+```
