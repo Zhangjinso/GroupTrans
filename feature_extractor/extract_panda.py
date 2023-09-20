@@ -13,7 +13,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]='1'
 
 
 img_path = './dataset/panda_video/bbox_crop/'
-ann_path = '/mnt/8T/glf/baseline/panda_annotation/video_annos/'
+ann_path = './dataset/panda_annotation/video_annos/'
 save_path = '../dataset/panda_annotation/video_annos/'
 
 class base_resnet(nn.Module):
