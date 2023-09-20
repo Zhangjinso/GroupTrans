@@ -42,6 +42,7 @@ def get_person_traj_group_list(person_json_path, group_json_path):
     max_frame_count = 0
     min_frame_count = 9999
     for person_id,person in persons_file.items():
+        # print(person["frames list"][0])
         for i,frame in enumerate(person["frames list"]):
             max_frame_count = max(max_frame_count, frame['frame_id'])
             min_frame_count = min(min_frame_count, frame['frame_id'])
@@ -61,7 +62,7 @@ def get_person_traj_group_list(person_json_path, group_json_path):
         if group_json_path.endswith('tressider-2019-03-16_1.json'):
             print('pid,nframe', person_id, len(person['frames list']))
         for frame_id in range(len(person["frames list"])):
-            #print(person["face orientation"][frame_id])
+            # print(person["frames list"][frame_id], frame_id)
             fid = person["frames list"][frame_id]['frame_id']
             assert fid >= 0
             tmp_person["traj"][fid] = \
@@ -488,7 +489,7 @@ def train_group_embedding():
 model_config = config_param.model_config
 
 if __name__ == '__main__':
-    READ_DATA_PATH_PERSON = "./dataset/jrdb_annotation/video_anns/"
+    READ_DATA_PATH_PERSON = "./dataset/jrdb_annotation/video_annos/"
     READ_DATA_PATH_GROUP = './dataset/jrdb_annotation/grouping_annotation_train/'
     # cfg
     parser = argparse.ArgumentParser(description='')
@@ -504,7 +505,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_epoch', type=int, default=220, help="")
     parser.add_argument('--resume', type=int, default=0, help="")
     parser.add_argument("--loading_tracjory_net", type=str, default="", help="pretrained model")
-    parser.add_argument("--saving_tracjory_net", type=str, default="./ckpt1", help="")
+    parser.add_argument("--saving_tracjory_net", type=str, default="./ckpt", help="")
     parser.add_argument("--train_embedding", type=int, default=1, help="")
     parser.add_argument("--save_every_n_epoch", type=int, default=2, help="")
     parser.add_argument("--refresh_ana", type=int, default=0, help="")

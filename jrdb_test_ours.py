@@ -283,8 +283,8 @@ def count_param(model):
 
 if __name__ == '__main__':
     ds_split = 'test'
-    READ_DATA_PATH_PERSON = f"/mnt/8T/glf/baseline/jrdb_annotation/video_anns/"
-    READ_DATA_PATH_GROUP = f'/mnt/8T/glf/baseline/jrdb_annotation/grouping_annotation_train/'
+    READ_DATA_PATH_PERSON = f"./dataset/jrdb_annotation/video_annos/"
+    READ_DATA_PATH_GROUP = f'./dataset/jrdb_annotation/grouping_annotation_train/'
     
     # Full_raw_release = "<FILL_WITH_RIGHT_PATH>"
     # cfg
@@ -324,6 +324,7 @@ if __name__ == '__main__':
             print("start gen pkl")
             tmp_all = f.readlines()
             for i in tqdm(range(0, len(tmp_all))):
+                # print(os.path.join(READ_DATA_PATH_GROUP,tmp_all[i].strip()+'.json'))
                 val_set.append(
                     get_person_traj_group_list(
                         os.path.join(READ_DATA_PATH_PERSON,tmp_all[i].strip(),"tracks_new.json"),

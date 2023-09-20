@@ -7,10 +7,30 @@ import cv2
 from tqdm import tqdm
 from numpy import random
 img_path='./dataset/JRDB/images/image_stitched_key/'
-ann_path = './dataset/jrdb_annotation/video_anns/'
+ann_path = './dataset/jrdb_annotation/video_annos'
 save_path = './dataset/JRDB/bbox_jrdb/'
 
-ann_list= '''clark-center-2019-02-28_1
+ann_list= '''tressider-2019-03-16_0
+svl-meeting-gates-2-2019-04-08_1
+svl-meeting-gates-2-2019-04-08_0
+stlc-111-2019-04-19_0
+packard-poster-session-2019-03-20_2
+packard-poster-session-2019-03-20_1
+packard-poster-session-2019-03-20_0
+memorial-court-2019-03-16_0
+jordan-hall-2019-04-22_0
+huang-lane-2019-02-12_0
+huang-basement-2019-01-25_0
+hewlett-packard-intersection-2019-01-24_0
+gates-to-clark-2019-02-28_1
+gates-basement-elevators-2019-01-17_1
+gates-159-group-meeting-2019-04-03_0
+forbes-cafe-2019-01-22_0
+cubberly-auditorium-2019-04-22_0
+clark-center-intersection-2019-02-28_0
+clark-center-2019-02-28_0
+bytes-cafe-2019-02-07_0
+clark-center-2019-02-28_1
 gates-ai-lab-2019-02-08_0
 huang-2-2019-01-25_0
 meyer-green-2019-03-16_0
@@ -30,8 +50,8 @@ for i in range(0,len(ann_list)):
         tmp2 = tmp1[2].split('.')
         frame = int(tmp2[0])
         tmp_index = i
-        img_pt = img_path + '/'+img_name
-        #print(img_pt)
+        img_pt = os.path.join(img_path1,img_name)
+        # print(img_pt)
         img = cv2.imread(img_pt)
         height = 480
         width = 3760
